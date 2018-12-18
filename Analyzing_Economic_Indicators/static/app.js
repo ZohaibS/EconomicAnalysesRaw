@@ -40,7 +40,7 @@ function buildCharts() {
 
         var chartData = [trace1, trace2];
 
-        var layout = {barmode: 'group'};
+        var layout = {barmode: ''};
 
     Plotly.plot("myDiv", {data: chartData, layout: layout});
         })
