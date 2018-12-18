@@ -1,12 +1,26 @@
-function buildCharts(country_index) {
+console.log("hello world")
     
-    d3.json(`/countries/${country_index}`).then((Data) => {
-        const countries = Data.Country;
-        const growthOne = Data.GrowthOne.map(Number);
-        const growthTwo = Data.GrowthTwo.map(Number);
-        const latitude = Data.lat;
-        const longitude = Data.long;
-        console.log(countries, growthOne, growthTwo, latitude, longitude);
+function buildCharts() {
+    
+    d3.json(`/all`).then((Data) => {
+        var countries = Data.map( d => d.Country)
+        console.log(countries)
+        var growthOne = Data.map( d => +d.GrowthOne)
+        console.log(growthOne)
+        var growthTwo = Data.map( d => +d.GrowthTwo)
+        console.log(growthTwo)
+        var LocTuples = Data.map( d => [+d.lat, +d.long] )
+        console.log(LocTuples)
+    
+
+
+        
+//         const countries = Data.Country;
+//         const growthOne = Data.GrowthOne.map(Number);
+//         const growthTwo = Data.GrowthTwo.map(Number);
+//         const latitude = Data.lat;
+//         const longitude = Data.long;
+//         console.log(countries, growthOne, growthTwo, latitude, longitude);
 
 
             var trace1 = {
@@ -26,9 +40,10 @@ function buildCharts(country_index) {
 
         var chartData = [trace1, trace2];
 
-        var layout = {barmode: 'stack'};
+        var layout = {barmode: 'group'};
 
     Plotly.plot("myDiv", {data: chartData, layout: layout});
-    });
-}
-    
+        })
+    };
+
+    buildCharts()

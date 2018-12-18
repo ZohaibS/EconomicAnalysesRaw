@@ -8,7 +8,7 @@
 # import json
 
 #This file is strictly for the purposes of testing the dataflow.
-#So instead of a scrape(), it will just generate two random lists
+#So instead of a scrape(), it will just generate two lists
 #and format them nicely for use in our Flask app.
 def Scrape():    
     #import numpy as np
