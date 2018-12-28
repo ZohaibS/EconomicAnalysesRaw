@@ -19,11 +19,15 @@ import pprint
 
 
 # In[3]:
-
+#### ATTEMPT 2 TO WRITE INFO TO MONGO DB
+client = MongoClient('localhost', 27017)
+db = client['Economic_Analysis']
+Data = db['Data']
 
 # set up the splinter method
 executable_path = {'executable_path': 'chromedriver.exe'}
 browser = Browser('chrome', **executable_path, headless=False)
+
 
 
 # In[4]:
@@ -78,10 +82,15 @@ tariff_barriers = start2[2]
 
 
 # jsonify the trade_direction dataframe 
+# tariff_barriers.columns = ['country_name', 'year', 'AllProd_binding_coverage', 'AllProd_simpleMean_boundRate', 'AllProd_simpleMeanTariff', 'AllProd_weightedMeanTariff', 'AllProd_shareOf_tariffLines_INTLpeaks', 'AllProd_shareOf_tariffLines_SpecRates', 'PrimProd_simpleMeanTariff', 'PrimProd_weightedMeanTariff', 'ManufProd_simpleMeanTariff', 'ManufProd_weightedMeanTariff']
+# json_tariff_barriers = tariff_barriers.to_json( orient='index')
+#json_tariff_barriers
+
+###THIS IS WHERE I TAKE THE ABOVE AND ATTEMPT TO PUT IT INTO MONGODB 
+with open('')
 tariff_barriers.columns = ['country_name', 'year', 'AllProd_binding_coverage', 'AllProd_simpleMean_boundRate', 'AllProd_simpleMeanTariff', 'AllProd_weightedMeanTariff', 'AllProd_shareOf_tariffLines_INTLpeaks', 'AllProd_shareOf_tariffLines_SpecRates', 'PrimProd_simpleMeanTariff', 'PrimProd_weightedMeanTariff', 'ManufProd_simpleMeanTariff', 'ManufProd_weightedMeanTariff']
 json_tariff_barriers = tariff_barriers.to_json( orient='index')
 #json_tariff_barriers
-
 
 # In[11]:
 
@@ -218,6 +227,8 @@ json_exchange_rates = exchange_rates.to_json( orient='index')
 
 # In[ ]:
 
+browser.quit()
+    return world_tables
 
 
 
