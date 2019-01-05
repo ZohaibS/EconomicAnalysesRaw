@@ -3,7 +3,7 @@ function unemploymentCharts() {
 
     // data from 2.5	World Development Indicators: Unemployment, http://wdi.worldbank.org/table/2.5
     console.log(data)
-    console.log(data(Object))
+    console.log(data)(__proto__[Object])
     var country = []
     var male = []
     var female = []
