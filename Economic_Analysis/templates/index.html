@@ -1,0 +1,288 @@
+<html>
+   <head>
+      <title>Investigating Official Developmental Assistance per Capita</title>
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+      <script type = "text/javascript" src = "https://www.gstatic.com/charts/loader.js">
+      </script>
+      <script type = "text/javascript" src = "https://www.google.com/jsapi">
+      </script>
+      <script type = "text/javascript">
+         google.charts.load('current', {packages: ['treemap']});     
+      </script>
+        <link rel="stylesheet" src="{{url_for('static', filename='d3Style.css')}}">
+        <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/styles.css') }}">
+   </head>
+   
+   <body>
+<div class="container">            
+         <div class="jumbotron">
+               <h1><center>Project Title</center></h1> 
+               <h4><center>Objective of Project</center></h4>
+                  <br>
+             <p><center>
+                  The economic indicators examined consisted of CPI to track cost of living, employment rates across the world, and Official Developmental Assistance metrics to track Global Aid.
+                  <br>
+                  <br>
+                  The data may be found among the tables <a style="color: lightseagreen" href="http://wdi.worldbank.org/tables" target="_blank">here</a>. Thank you World Bank!
+             </p></center>
+         </div>
+
+         <div class="row">
+
+               <div class="col-3">
+               </div>
+            
+               <div class="col-6">
+               <p>Brief project description here.</p>
+               </div>
+
+               
+                  <div class="col-3">
+                  </div>
+               </div>
+
+
+         <div class="jumbotron">
+               <h3><center>A Snapshot of the Global Cost of Living</center></h3> 
+               <h5><center>Using CPI to track daily living costs.</center></h5>
+                  <br>
+             <p><center>
+                     Some Brief information about the Data
+             </p></center>
+         </div>
+
+         <div class="row">
+             <div class="col-2">
+             </div>
+
+             <div class="col-8"><center>
+                  <div id="scatter">
+                        <!-- We append our chart here. -->
+                      </div>
+                  </center>
+             </div>
+
+             <div class="col-2">
+             </div>
+         </div>
+
+         <div class="row">
+               <div class="col-2">
+               </div>
+  
+               <div class="col-8"><center>
+                    <h4><br>A Heading for a Description about the Visualization</h4>
+                    <br>
+                    <p>This is some random placeholder text to fill the description for now.</p>
+                    </center>
+               </div>
+  
+               <div class="col-2">
+               </div>
+           </div>
+           <div class="jumbotron">
+               <h3><center>Employment/Unemployment Section</center></h3> 
+               <h5><center>Objective</center></h5>
+                  <br>
+             <p><center>
+                     Some Brief information about the Data
+                  <br>
+                     Some Brief information about the Source of the Data
+             </p></center>
+         </div>
+
+         <div class="row">
+             <div class="col-12"><center>
+                  <div id="hbar"></div>
+                  </center>
+             </div>
+         </div>
+
+         <div class="row">
+               <div class="col-2">
+               </div>
+  
+               <div class="col-8"><center>
+                    <h4><br>A Heading for a Description about the Visualization</h4>
+                    <br>
+                    <p>This is some random placeholder text to fill the description for now.</p>
+                    </center>
+               </div>
+  
+               <div class="col-2">
+               </div>
+           </div>
+
+         <!-- <div class="container"> -->
+               <div class="jumbotron">
+                 <h3><center>International Aid</center></h3> 
+                 <h5><center>Investigating the International Aid Landscape</center></h5>
+                    <br>
+               <p><center>
+                    Data used is for the years 2015 and 2016 and makes use of the <a style="color: black" href="https://en.wikipedia.org/wiki/Official_development_assistance" target="_blank">Official Developmental Assistance</a>. 
+                    <br>
+
+               </p></center>
+               </div>
+             <!-- </div> -->
+
+
+   <div class="row">
+
+   <div class="col-1">
+   </div>
+
+   <div class="col-5">
+   <center><p><b> Estimated Total Official Developmental Assistance in 2015 of the Regions that Received atleast 5 Million in Aid</b></p></center>
+   </div>
+   <div class="col-5">
+         <center><p><b> Estimated Total Official Developmental Assistance in 2016 of the Regions that Received atleast 5 Million in Aid</b></p></center>
+   </div>
+   
+      <div class="col-1">
+      </div>
+   </div>
+
+   <div class="row">
+         <div class="col-1">
+
+         </div>
+
+         <div class = "col-5">
+               <div id = "2015_Total">
+            <script type="text/javascript" language="javascript" src="{{url_for('static', filename='ODA_2015.js')}}"></script>
+               </div>
+         </div>
+
+         <div class="col-5">
+               <div id = "2016_Total">
+                     <script type="text/javascript" language="javascript" src="{{url_for('static', filename='ODA_2016.js')}}"></script>
+                        </div>
+            
+         </div>
+         
+         <div class="col-1">
+         </div>
+      </div>
+
+
+      <div class="row">
+
+            <div class="col-1">
+            </div>
+         
+            <div class="col-5">
+               <center><p>
+                  <ul class="list-unstyled">
+                        <li>Observation One: </li>
+                        <li>Observation Two:</li>
+                        <li>Observation Three:</li>
+                  </ul>
+
+                     </p></center>
+            </div>
+
+            <div class="col-5">
+                  <center><p>
+                     <ul class="list-unstyled">
+                           <li>Observation One: </li>
+                           <li>Observation Two:</li>
+                           <li>Observation Three:</li>
+                     </ul>
+   
+                        </p></center>
+               </div>
+
+            <div class="col-1">
+
+            </div>
+         </div>
+<br>
+<br>
+<br>
+         <div class="row">
+
+               <div class="col-1">
+               </div>
+            
+               <div class="col-5">
+               <center><p><b> Official Developmental Aid per Capita in 2015 of the Regions that Received atleast 5$ of Aid per Capita in USD</b></p></center>
+               </div>
+               <div class="col-5">
+                     <center><p><b> Official Developmental Aid per Capita in 2016 of the Regions that Received atleast 5$ of Aid per Capita in USD</b></p></center>
+               </div>
+               
+                  <div class="col-1">
+                  </div>
+               </div>
+
+         <div class="row">
+            <div class="col-1">
+            </div>
+         
+
+            <div class = "col-5">
+                  <div id = "2015_PerCapita">
+               <script type="text/javascript" language="javascript" src="{{url_for('static', filename='ODA_PC_2015.js')}}"></script>
+                  </div>
+            </div>
+
+            <div class="col-5">
+                  <div id = "2016_PerCapita">
+               <script type="text/javascript" language="javascript" src="{{url_for('static', filename='ODA_PC_2016.js')}}"></script>
+                  </div>
+            </div>
+            
+            <div class="col-1">
+            </div>
+         </div>
+
+         <div class="row">
+
+               <div class="col-1">
+               </div>
+            
+               <div class="col-5">
+                  <center><p>
+                     <ul class="list-unstyled">
+                           <li>Observation One: </li>
+                           <li>Observation Two:</li>
+                           <li>Observation Three:</li>
+                     </ul>
+   
+                        </p></center>
+               </div>
+   
+               <div class="col-5">
+                     <center><p>
+                        <ul class="list-unstyled">
+                              <li>Observation One: </li>
+                              <li>Observation Two:</li>
+                              <li>Observation Three:</li>
+                        </ul>
+      
+                           </p></center>
+                  </div>
+   
+               <div class="col-1">
+   
+               </div>
+            </div>
+<div class="col-1"></div>
+<div class="col-5">
+<div id="sankey_basic"> 
+   <script type="text/javascript" language="javascript" src="{{url_for('static', filename='HDI_2015.js')}}"></script>
+</div>
+</div>
+<div class="col-5"></div>
+<div class="col-1"></div>
+
+</div>            
+         <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+         <script src="https://d3js.org/d3.v5.min.js"></script>
+         <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.9.1/d3-tip.js"></script>
+         <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+         <script type="text/javascript" language="javascript" src="{{url_for('static', filename='UnemploymentBars.js')}}"></script>
+         <script type="text/javascript" language="javascript" src="{{url_for('static', filename='CPI_and_GDP.js')}}"></script>
+      </body>
+</html>

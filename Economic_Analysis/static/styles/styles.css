@@ -1,0 +1,27 @@
+body {
+  background-color: lightgray;
+}
+head {
+  background-color: blueviolet
+}
+.container {
+  background-color: whitesmoke;
+}
+.jumbotron {
+  background-color: palegreen;
+}
+h1 {
+  color: darkolivegreen;
+}
+h3 {
+  color: darkolivegreen;
+}
+h4 {
+  color: darkolivegreen;
+}
+h5 {
+  color: darkolivegreen;
+}
+.p {
+  color: darkolivegreen;
+}
