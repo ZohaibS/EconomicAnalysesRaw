@@ -7,7 +7,7 @@ var margin = {
     top: 40,
     right: 90,
     bottom: 80,
-    left: 35
+    left: 40
 };
 
 // // Create the width and height based svg margins and parameters to fit chart group within the canvas
@@ -87,8 +87,8 @@ function successHandle(countryData) {
         .attr("cx", d => xLinearScale(d.NCPI))
         .attr("cy", d => yLinearScale(d.NGDP))
         .attr("r", d => (d.NPOP)*30)
-        .attr("fill", "#788dc2")
-        .attr("opacity", ".6")
+        .attr("fill", "#6495ED")
+        .attr("opacity", ".5")
 
 
 
@@ -98,7 +98,7 @@ function successHandle(countryData) {
         .attr("class", "tooltip")
         .offset([-10, 80])
         .html(function (d) {
-            return (`${d.Country}<br>GDP: ${d.GDP} $ billions<br>CPI: ${d.CPI}% annual growth<br> POPULATION: ${d.Population} billions`);
+            return (`${d.Country}<br>GDP: ${d.GDP} $ billions<br>CPI: ${d.CPI}% annual growth<br> POPULATION: ${d.Population}`);
         });
    
 
@@ -119,19 +119,19 @@ function successHandle(countryData) {
     // Create axes labels
     chartGroup.append("text")
         .attr("transform", "rotate(-90)")
-        .attr("y", 0 - margin.left -5)
+        .attr("y", 0 - margin.left -7)
         .attr("x", 0 - (height / 2))
         .attr("dy", "1em")
         .attr("class", "axisText")
         .text("GDP")
-        .style("font-size", "20px")
+        .style("font-size", "25px")
         .style("font-style", "Bold")
 
     chartGroup.append("text")
         .attr("transform", `translate(${width / 2}, ${height + margin.top + 5})`)
         .attr("class", "axisText")
         .text("CPI")
-        .style("font-size", "20px")
+        .style("font-size", "25px")
         .style("font-style", "Bold");
 
 }
