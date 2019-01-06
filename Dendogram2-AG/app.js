@@ -5,9 +5,9 @@ var svgHeight = 600;
 
 var margin = {
     top: 40,
-    right: 40,
+    right: 90,
     bottom: 80,
-    left: 90
+    left: 35
 };
 
 // // Create the width and height based svg margins and parameters to fit chart group within the canvas
@@ -54,8 +54,8 @@ function successHandle(countryData) {
 
 
     var yLinearScale = d3.scaleLinear()
-        .domain([0, 0.02, 0.2, 1])
-        .range([height, height/6.5, height/7.5,0]);
+        .domain([0, 1])
+        .range([height,0]);
 
     // Create axis functions by calling the scale functions
 
@@ -86,19 +86,21 @@ function successHandle(countryData) {
         .append("circle")
         .attr("cx", d => xLinearScale(d.NCPI))
         .attr("cy", d => yLinearScale(d.NGDP))
-        .attr("r", "5")
+        .attr("r", d => (d.NPOP)*30)
         .attr("fill", "#788dc2")
-        .attr("opacity", ".75")
+        .attr("opacity", ".6")
+
 
 
     // Step 6: Initialize tool tip
     // ==============================
     var toolTip = d3.tip()
         .attr("class", "tooltip")
-        .offset([-10, 100])
+        .offset([-10, 80])
         .html(function (d) {
             return (`${d.Country}<br>GDP: ${d.GDP} $ billions<br>CPI: ${d.CPI}% annual growth<br> POPULATION: ${d.Population} billions`);
         });
+   
 
     // Step 7: Create tooltip in the chart
     // ==============================
@@ -117,29 +119,20 @@ function successHandle(countryData) {
     // Create axes labels
     chartGroup.append("text")
         .attr("transform", "rotate(-90)")
-        .attr("y", 0 - margin.left + 30)
+        .attr("y", 0 - margin.left -5)
         .attr("x", 0 - (height / 2))
         .attr("dy", "1em")
         .attr("class", "axisText")
         .text("GDP")
-        .style("font-size", "20px");
+        .style("font-size", "20px")
+        .style("font-style", "Bold")
 
     chartGroup.append("text")
-        .attr("transform", `translate(${width / 2}, ${height + margin.top + 10})`)
+        .attr("transform", `translate(${width / 2}, ${height + margin.top + 5})`)
         .attr("class", "axisText")
         .text("CPI")
-        .style("font-size", "20px");
-
-    chartGroup.append("text")
-        .attr("x", (width / 1.5))
-        .attr("y", 0 + (margin.top)-25)
-        .text("Year : 2016")
-        .style("font-size", "20px");
-
-    chartGroup.append("text")
-        .attr("x", (width / 1.5))
-        .attr("y", 0 + (margin.top *1.2))
-        .text("161 Countries")
-        .style("font-size", "20px");
+        .style("font-size", "20px")
+        .style("font-style", "Bold");
 
 }
+
